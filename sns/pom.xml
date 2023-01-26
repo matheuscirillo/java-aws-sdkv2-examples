@@ -9,8 +9,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <packaging>jar</packaging>
-    <artifactId>sqs</artifactId>
+    <artifactId>sns</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -21,7 +20,7 @@
     <dependencies>
         <dependency>
             <groupId>software.amazon.awssdk</groupId>
-            <artifactId>sqs</artifactId>
+            <artifactId>sns</artifactId>
         </dependency>
     </dependencies>
 

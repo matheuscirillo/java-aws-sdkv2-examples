@@ -11,7 +11,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-public class Main {
+public class SqsDemo {
 
     private static final ScheduledExecutorService POC_QUEUE_POLLER_THREAD = Executors.newScheduledThreadPool(
             1,
@@ -21,7 +21,7 @@ public class Main {
             1,
             r -> new Thread(r, "dlq-queue-poller"));
 
-    private static final Logger LOG = LoggerFactory.getLogger(Main.class);
+    private static final Logger LOG = LoggerFactory.getLogger(SqsDemo.class);
 
     public static void main(String[] args) {
         LOG.info("App started");
@@ -40,7 +40,7 @@ public class Main {
         });
 
         initJavaPocPoller(javaPocPoller::pollForMessages);
-        initDlqPoll(dlqPoller::pollForMessages);
+//        initDlqPoll(dlqPoller::pollForMessages);
 
         LOG.info("End of main");
 

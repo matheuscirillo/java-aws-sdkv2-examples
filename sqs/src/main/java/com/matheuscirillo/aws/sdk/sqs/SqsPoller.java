@@ -8,7 +8,7 @@ import software.amazon.awssdk.services.sqs.model.ReceiveMessageResponse;
 
 public class SqsPoller {
 
-    private static final Logger LOG = LoggerFactory.getLogger(Main.class);
+    private static final Logger LOG = LoggerFactory.getLogger(SqsDemo.class);
 
     protected SqsClient client;
     protected String queueUrl;
@@ -26,7 +26,7 @@ public class SqsPoller {
 
     public void pollForMessages() {
         try {
-            LOG.info("Queue: {} - Receiving message", this.queueName);
+            LOG.info("Queue: {} - Polling for messages", this.queueName);
             ReceiveMessageResponse response = this.client.receiveMessage(builder -> builder.queueUrl(queueUrl)
                     .waitTimeSeconds(15)
                     .maxNumberOfMessages(10));
