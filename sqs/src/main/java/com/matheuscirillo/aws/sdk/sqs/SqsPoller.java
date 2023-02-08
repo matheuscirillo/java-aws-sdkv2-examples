@@ -26,7 +26,7 @@ public class SqsPoller {
 
     public void pollForMessages() {
         try {
-            LOG.info("Queue: {} - Polling for messages", this.queueName);
+            LOG.info("Queue: {} - Polling for messages", "");
             ReceiveMessageResponse response = this.client.receiveMessage(builder -> builder.queueUrl(queueUrl)
                     .waitTimeSeconds(15)
                     .maxNumberOfMessages(10));
